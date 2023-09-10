@@ -46,7 +46,7 @@ class Car {
       <img src="${this.image}" alt="${this.manufacture}">
     </div>
     <div class="cars__container-desc">
-      <p class="second__txt">${this.manufacture} / ${this.model}</p>
+      <p class="second__txt">${this.manufacture} ${this.model}</p>
       <p class="second__txt-bold fw-bolder">Rp ${this.rentPerDay} / hari</p>
       <p class="second__txt">${this.description}</p>
     </div>
