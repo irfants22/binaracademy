@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Binar Car Rental - Cari Mobil</title>
+    <link
+      rel="stylesheet"
+      href="./css/bootstrap-5.3.1-dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./css/cm.style.css" />
+  </head>
+
+  <body class="pe-0">
+    <header class="sticky-top">
+      <nav class="navbar navbar-expand-md">
+        <div class="container-xl">
+          <a class="navbar-brand fw-bold" href="./landing-page.html"
+            >Binar Car Rental</a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="offcanvas offcanvas-end"
+            tabindex="-1"
+            id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel"
+          >
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title fw-bold" id="offcanvasNavbarLabel">
+                Binar Car Rental
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav ms-auto mb-lg-0 mx-2">
+                <li class="nav-item">
+                  <a
+                    class="nav-link active mx-2 second__txt fw-medium"
+                    aria-current="page"
+                    href="./landing-page.html#services"
+                    >Our Services</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link active mx-2 second__txt fw-medium"
+                    aria-current="page"
+                    href="./landing-page.html#whyus"
+                    >Why Us</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link active mx-2 second__txt fw-medium"
+                    aria-current="page"
+                    href="./landing-page.html#testimonial"
+                    >Testimonial</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link active mx-2 second__txt fw-medium"
+                    aria-current="page"
+                    href="./landing-page.html#faq"
+                    >FAQ</a
+                  >
+                </li>
+              </ul>
+              <form class="d-flex">
+                <button class="btn nav__btn" type="submit">Register</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section id="homepage" class="hero">
+        <div class="hero__container container-xl">
+          <div class="row hero__home">
+            <div
+              class="col-xl-6 col-lg-6 col-md-12 mt-5 d-flex flex-column justify-content-center gap-1"
+            >
+              <h1 class="main__txt-bold fw-bolder">
+                Sewa & Rental Mobil Terbaik di kawasan Bekasi
+              </h1>
+              <p class="second__txt">
+                Selamat datang di Binar Car Rental. Kami menyediakan mobil
+                kualitas terbaik dengan harga terjangkau. Selalu siap melayani
+                kebutuhanmu untuk sewa mobil selama 24 jam.
+              </p>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-12 mt-5">
+              <img
+                class="img-fluid w-100"
+                src="./images/img_car.png"
+                alt="Car"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="position-relative">
+        <div
+          class="features__ container-lg position-absolute start-50 translate-middle"
+        >
+          <div class="features__container row">
+            <div class="features__cont-items col-12 col-lg-9 p-2">
+              <div class="row">
+                <div class="features__items col-12 col-md-6 col-lg-3">
+                  <label for="driversType">Tipe Driver</label>
+                  <select name="" id="driversType" class="feat-i">
+                    <option value="">Pilih Tipe Driver</option>
+                    <option value="">Dengan Sopir</option>
+                    <option value="">Tanpa Sopir (Lepas Kunci)</option>
+                  </select>
+                </div>
+                <div class="features__items col-12 col-md-6 col-lg-3">
+                  <label for="rentalDates">Tanggal</label>
+                  <input
+                    type="date"
+                    id="rentalDates"
+                    class="feat-i"
+                    placeholder="Tanggal"
+                  />
+                </div>
+                <div class="features__items col-12 col-md-6 col-lg-3">
+                  <label for="rentalTimes">Waktu Jemput/Ambil</label>
+                  <select name="" id="rentalTimes" class="feat-i">
+                    <option value="none">Pilih Waktu</option>
+                    <option value="08:00">08.00 WIB</option>
+                    <option value="09:00">09.00 WIB</option>
+                    <option value="10:00">10.00 WIB</option>
+                    <option value="11:00">11.00 WIB</option>
+                    <option value="12:00">12.00 WIB</option>
+                  </select>
+                </div>
+                <div class="features__items col-12 col-md-6 col-lg-3">
+                  <label for="passangersInput"
+                    >Jumlah penumpang (Optional)</label
+                  >
+                  <input
+                    type="number"
+                    id="passangersInput"
+                    class="feat-i"
+                    placeholder="Jumlah Penumpang"
+                    min="1"
+                    max="10"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="features__btn col-12 col-lg-3 p-2 mt-0 mt-lg-4 gap-4">
+              <button id="load-btn" class="feat__btn btn nav__btn">
+                Cari Mobil
+              </button>
+              <button
+                id="clear-btn"
+                class="feat__btn btn nav__btn nav__btn-clear"
+              >
+                Hapus
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="carsResult">
+        <div
+          id="cars-container"
+          class="carsResult__container container-lg"
+        ></div>
+      </section>
+    </main>
+
+    <footer
+      id="footer"
+      class="footer__container container-lg d-flex justify-content-evenly px-3 px-lg-0"
+    >
+      <div class="address">
+        <p class="second__txt">
+          Jalan Suroyo No. 161 Mayangan Kota Probolonggo 672000
+        </p>
+        <p class="second__txt">binarcarrental@gmail.com</p>
+        <p class="second__txt">081-233-334-808</p>
+      </div>
+      <div class="navigation">
+        <a href="./landing-page.html#services" class="second__txt fw-semibold"
+          >Our Services</a
+        >
+        <a href="./landing-page.html#whyus" class="second__txt fw-semibold"
+          >Why Us</a
+        >
+        <a
+          href="./landing-page.html#testimonial"
+          class="second__txt fw-semibold"
+          >Testimonial</a
+        >
+        <a href="./landing-page.html#faq" class="second__txt fw-semibold"
+          >FAQ</a
+        >
+      </div>
+      <div class="social">
+        <p class="second__txt">Connect with us</p>
+        <img src="./icon/social.png" alt="Social Media" />
+      </div>
+      <div class="copyright">
+        <p class="second__txt">Copyright Binar 2022</p>
+        <img src="./icon/rectangle.png" alt="Logo" />
+      </div>
+    </footer>
+
+    <script type="text/javascript" src="./scripts/binar.js"></script>
+    <script type="text/javascript" src="./scripts/app.example.js"></script>
+    <script type="text/javascript" src="./scripts/car.example.js"></script>
+    <script type="text/javascript" src="./scripts/main.example.js"></script>
+    <script src="./css/bootstrap-5.3.1-dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

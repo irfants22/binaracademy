@@ -1,0 +1,165 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-padding-top: 100px;
+}
+
+body {
+  font-family: Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#services,
+#whyus,
+#testimonial,
+#banner,
+#faq,
+#footer {
+  margin-top: 100px;
+}
+
+header nav,
+.hero,
+.testimonial__body {
+  background-color: #f1f3ff;
+}
+
+.main__txt-bold {
+  font-size: 36px;
+  font-weight: 700px;
+  line-height: 54px;
+}
+
+.main__txt {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 36px;
+}
+
+.second__txt-bold {
+  font-size: 1rem;
+  font-weight: 700px;
+  line-height: 1.5rem;
+}
+
+.second__txt {
+  font-size: 14px;
+  font-weight: 300px;
+  line-height: 20px;
+}
+
+.nav__btn,
+.hero__btn,
+.banner__btn {
+  background-color: #73ca5c;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  border-radius: 3px;
+}
+
+.nav__btn:hover,
+.hero__btn:hover,
+.banner__btn:hover {
+  background-color: #5cb85f;
+  color: #fff;
+}
+
+.hero__home a {
+  color: black;
+}
+
+.services__items ul {
+  list-style: none;
+}
+
+.services__items ul li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem;
+}
+
+.testimonial__container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.testimonial__title {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.banner__content {
+  min-height: 326px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #0d28a6;
+  color: white;
+  border-radius: 13px;
+  gap: 1rem;
+}
+
+.address,
+.navigation,
+.social,
+.copyright {
+  width: 20%;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: black;
+}
+
+/* Responsive Mobile */
+
+@media screen and (max-width: 768px) {
+  html {
+    scroll-padding-top: 70px;
+  }
+
+  .carousel__content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .carousel__btn {
+    display: flex;
+    align-items: start;
+  }
+
+  .banner__content {
+    padding-block: 54px;
+  }
+
+  .footer__container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .footer__container > div {
+    width: 100%;
+  }
+}
