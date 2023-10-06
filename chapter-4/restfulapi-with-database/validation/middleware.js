@@ -1,21 +1,21 @@
-let carList = require("../resource/cars.json");
+const { Car } = require("../models");
 
-function setValidationById(req, res, next) {
+const setValidationById = async (req, res, next) => {
+  try {
     const id = req.params.id;
-    const book = carList.find((i) => i.id === id);
+    const Cars = await Car.findByPk(id);
 
-    if (!book) {
-        res.status(404).json({
-            error: "The ID you are looking for was not found!",
-        });
-
-        return;
+    if (!Cars) {
+      res.status(404).json({ error: "ID not found!" });
     }
 
-    req.carList = carList;
+    req.Cars = Cars;
     next();
-}
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+  }
+};
 
 module.exports = {
-    setValidationById,
+  setValidationById,
 };

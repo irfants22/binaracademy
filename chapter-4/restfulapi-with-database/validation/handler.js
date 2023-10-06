@@ -1,56 +1,74 @@
-let carList = require("../resource/cars.json");
+const { Car } = require("../models");
 const crypto = require("crypto");
 
 function handleHomePage(req, res) {
-    res.status(200).send('{ message: “Ping successfully” }');
-};
-
-function handleCarsList(req, res) {
-    res.status(200).json(carList);
-};
-
-function handleGetCars(req, res) {
-    const id = req.params.id;
-    const filter = carList.find((i) => i.id === id);
-    res.status(200).json(filter);
-};
-
-function handleCreateCars(req, res) {
-    const { image, rentPerDay, capacity, description, availableAt } = req.body;
-    const newData = { id: crypto.randomUUID(), image, rentPerDay, capacity, description, availableAt };
-    carList.push(newData);
-    res.status(201).json(newData);
+  res.status(200).send("{ message: “Ping successfully” }");
 }
 
-function handleUpdateCars(req, res) {
-    const id = req.params.id
-    const data = carList.find((i) => i.id === id)
-    const payload = req.body;
-    const updateData = { ...data, ...payload };
+const handleCarsList = async (req, res) => {
+  try {
+    const result = await Car.findAll();
+    res.status(200).json(result);
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+  }
+};
 
-    const existingId = carList.findIndex((i) => i.id === id);
+const handleGetCars = async (req, res) => {
+  try {
+    const { id } = req.Cars;
+    const result = await Car.findByPk(id);
+    res.status(200).json(result);
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+  }
+};
 
-    carList[existingId] = updateData;
-    res.status(201).json(updateData);
-}
+const handleCreateCars = async (req, res) => {
+  try {
+    const body = req.body;
+    const result = await Car.create(body);
+    res.status(201).json(result);
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+  }
+};
 
-function handleDeleteCars(req, res) {
-    const id = req.params.id;
-    const del = carList.filter((i) => i.id !== id)
-    carList = del;
-    res.status(200).json("message: Deleted successfully");
+const handleUpdateCars = async (req, res) => {
+  try {
+    const { id } = req.Cars;
+    const body = req.body;
+
+    const [_, result] = await Car.update(body, {
+      where: { id },
+      returning: true,
+    });
+    res.status(201).json(result);
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+  }
+};
+
+const handleDeleteCars = async (req, res) => {
+  try {
+    const { id } = req.Cars;
+    await Car.destroy({ where: { id } });
+    res.status(201).json({ message: "Deleted successfully" });
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+  }
 };
 
 function notFound(req, res) {
-    res.status(404).send("Page Not Found");
-};
+  res.status(404).send({ message: "Page Not Found" });
+}
 
 module.exports = {
-    handleHomePage,
-    handleCarsList,
-    handleGetCars,
-    handleCreateCars,
-    handleUpdateCars,
-    handleDeleteCars,
-    notFound
+  handleHomePage,
+  handleCarsList,
+  handleGetCars,
+  handleCreateCars,
+  handleUpdateCars,
+  handleDeleteCars,
+  notFound,
 };
