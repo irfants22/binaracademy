@@ -75,4 +75,4 @@ npx sequelize-cli db:seed:all
 
 ## ERD
 
-![car_rental_db.png](./documentation/car_rental_db.png)
+![car_rental_db.png](./car_rental_db.png)
