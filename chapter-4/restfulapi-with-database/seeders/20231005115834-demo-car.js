@@ -7,16 +7,16 @@ module.exports = {
     return queryInterface.bulkInsert("Cars", [
       {
         id: crypto.randomUUID(),
-        name: "BMW",
-        image: "./images/car01.min.jpg",
+        name: "Car1",
+        image: "./images/car00.min.jpg",
         type: "small",
-        rentPerDay: 200000,
-        capacity: 2,
+        rentPerDay: 100000,
+        capacity: 1,
         description:
-          "Brake assist. Leather-wrapped shift knob. Glove box lamp. Air conditioning w/in-cabin microfilter.",
+          "description about a car.",
         availableAt: new Date(),
         createdAt: new Date(),
-        updatedAt: new Date(),
+        updatedAt: new Date()
       },
     ]);
   },
