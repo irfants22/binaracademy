@@ -7,6 +7,7 @@ const setValidationById = async (req, res, next) => {
 
     if (!Cars) {
       res.status(404).json({ error: "ID not found!" });
+      return;
     }
 
     req.Cars = Cars;
