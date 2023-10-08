@@ -34,7 +34,13 @@ npm install --save-dev sequelize-cli
 node index.js
 ```
 
-## Run Seeds
+## Running Migrations
+To create a table in your database, run the following command
+```
+npx sequelize-cli db:migrate
+```
+
+## Running Seeds
 If you want to enter sample data in the database
 ```
 npx sequelize-cli db:seed:all
