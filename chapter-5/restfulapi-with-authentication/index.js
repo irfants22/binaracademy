@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
-// const swaggerUi = require("swagger-ui-express");
-// const swaggerDocument = require("./docs");
+const swaggerUi = require("swagger-ui-express");
+const swaggerDocument = require("./docs/openapicar.json");
 const {
   home,
   getList,
@@ -20,15 +20,15 @@ const PORT = 8000;
 app.use(express.json());
 
 // DOCUMENTATION API
-// app.use("/api/docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use("/api/docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // HOME
 app.get("/", home);
 
 // AUTHENTICATION
-app.post("/auth/login", login);
 app.post("/auth/register", register);
 app.post("/auth/register/admin", authorize, isSuperAdmin, registerAdmin);
+app.post("/auth/login", login);
 
 // USER
 app.get("/users/me", authorize, currentUser);
