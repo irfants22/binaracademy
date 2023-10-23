@@ -40,7 +40,7 @@ app.post("/cars", authorize, isSuperAdminOrAdmin, create);
 app.put("/cars/:id", authorize, isSuperAdminOrAdmin, setValidationById, update);
 app.delete("/cars/:id", authorize, isSuperAdminOrAdmin, setValidationById, destroy)
 
-// WRONG END POINT
+// WRONG ENDPOINT
 app.get("*", notFound);
 
 app.listen(PORT, () => {
