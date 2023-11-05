@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Helvetica, sans-serif;
+}
+
+.txt-format {
+  font-size: 14px;
+  font-weight: 300px;
+  line-height: 20px;
+}
+
+.txt-format_bold {
+  font-size: 1rem;
+  font-weight: 700px;
+  line-height: 1.5rem;
+}
+
+.main_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 333px);
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.cards {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 5px #00000030;
+  gap: 0.5rem;
+}
+
+.card-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.car-img {
+  width: 270px;
+  border-radius: 0.5rem;
+}
+
+.cards ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  gap: 0.5rem;
+}
+
+.cards ul > li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.car-icon {
+  width: 20px;
+}
+
+.car-btn {
+  width: 100%;
+  background-color: #5cb85f;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  border-radius: 3px;
+  border: none;
+  padding: 0.5rem 12px;
+}
+
+.car-btn:hover {
+  background-color: #73ca5c;
+  color: #fff;
+}
